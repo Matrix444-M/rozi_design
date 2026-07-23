@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-color: #FAF9F6;
+    --card-bg: #FFFFFF;
+    --text-primary: #2C2C2C;
+    --text-secondary: #6B6B6B;
+    --accent-lavender: #E6E1EC;
+    --rose-gold: #E0BFB8;
+    --rose-gold-hover: #d2aca4;
+    --border-color: #F0ECE6;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 15px 35px rgba(224, 191, 184, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    direction: rtl;
+    padding-top: 4rem; /* مسافة من الفوق باش الهيدر ياخد راحته */
+}
+
+/* الهيدر الفوق */
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 1.5rem;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--rose-gold);
+    border-radius: 2px;
+}
+
+.header p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* حاوية الكروت */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* تصميم الكارت */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    width: 340px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-lavender), var(--rose-gold));
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(224, 191, 184, 0.4);
+}
+
+.card h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.card .desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.card .price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+/* زر الشراء */
+.buy-btn {
+    width: 100%;
+    background-color: var(--text-primary);
+    color: #FFFFFF;
+    border: none;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Tajawal', sans-serif;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buy-btn:hover {
+    background-color: var(--rose-gold);
+    color: var(--text-primary);
+}
